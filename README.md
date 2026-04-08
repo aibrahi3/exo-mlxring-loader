@@ -15,6 +15,7 @@
 - If there is only one active model in `/state`, it auto-selects it
 - If there is only one model in `/v1/models`, it auto-selects it
 - If multiple models are available and the script is run in an interactive terminal, it prompts you to choose
+- Interactive selection accepts search text and fuzzy model names, not just exact IDs
 - If multiple models are available and the script is run non-interactively, it exits with a clear error telling you to pass `--model`
 
 ## Usage
@@ -40,3 +41,4 @@ python3 recreate_mlxring_instance.py --delete-all-instances --wait-seconds 240
 
 - Unless `--keep-existing` is used, the script deletes existing instances for the selected model before creating a new one
 - If no usable `MlxRing` preview exists, EXO usually does not have enough free memory for that model placement
+- The script waits on the exact new instance it creates, so stale failed runners from older launches do not trigger false failures
